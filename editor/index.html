@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="contains">
+      <div class="nav-bar">
+        <h3>Welcome to custom Editor!</h3>
+        <div class="play" onclick="run()"><i class="fa-solid fa-play"></i></div>
+      </div>
+      <div class="left">
+        <div class="html-code">
+          <label for="html"><i class="fa-brands fa-html5"></i>HTML </label>
+          <textarea onkeyup="run()" id="html"></textarea>
+        </div>
+        <div class="css-code">
+          <label for="css"><i class="fa-brands fa-css3-alt"></i>CSS</label>
+          <textarea onkeyup="run()" name="textarea" id="css"></textarea>
+        </div>
+        <div class="java-code">
+          <label for="js"><i class="fa-brands fa-js"></i>JavaScript </label>
+          <textarea id="js"></textarea>
+        </div>
+      </div>
+      <div class="right">
+        <div class="label-bar">
+          <div class="output-bar">Output</div>
+          <div class="console-bar">Console</div>
+          <i class="fa-solid fa-chevron-up collapse"></i>
+        </div>
+        <div class="area">
+          <iframe src="" id="output" frameborder="0"></iframe>
+          <div id="console"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

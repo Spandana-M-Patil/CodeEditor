@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(24, 23, 23);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 28px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(39, 38, 38);
+  color: white;
+  position: relative;
+}
+
+.nav-bar .play::after {
+  content: " ";
+  width: 0px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  background-color: rgb(39, 38, 38);
+  border: 2px solid rgb(24, 23, 23);
+  text-align: center;
+  font-size: 18px;
+  padding: 0px 8px 8px 8px;
+  margin-left: 10px;
+  opacity: 0;
+  overflow: hidden;
+  transition: content 0.4s ease, opacity 0.4s ease;
+}
+
+.nav-bar .play {
+  border: 1px solid rgb(24, 23, 23);
+  padding: 4px 14px 4px 16px;
+  transition: 0.8s;
+}
+
+.nav-bar .play:hover {
+  background-color: rgb(24, 23, 23);
+  border: 1px solid rgb(39, 38, 38);
+  padding: 4px 14px 4px 16px;
+}
+
+.nav-bar .play:hover {
+  cursor: pointer;
+}
+
+.nav-bar .play:hover::after {
+  content: "Run";
+  width: 40px;
+  opacity: 1;
+}
+
+.contains {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  position: fixed;
+  /* overflow: scroll; */
+}
+
+.left {
+  display: flex;
+  margin-left: 10px;
+  justify-content: flex-start;
+  height: 40%;
+  width: 100%;
+  padding: 10px;
+}
+
+.left textarea {
+  height: 220px;
+  width: 95%;
+  background-color: rgb(39, 38, 38);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-family: monospace;
+  padding: 6px 10px;
+  resize: horizontal;
+  border-right: 5px solid rgb(24, 23, 23);
+}
+
+.left label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  padding: 6px;
+  width: 90%;
+  resize: horizontal;
+}
+
+.left label i {
+  margin-right: 5px;
+}
+.left label .box {
+  margin-left: auto;
+  border: 1px solid rgb(24, 23, 23);
+  background-color: rgb(39, 38, 38);
+  padding: 6px 2px 4px 8px;
+  margin-top: 0px;
+}
+
+.html-code,
+.css-code,
+.java-code {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+/* styling the donw part */
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 48%;
+  width: 100%;
+  font-size: 16px;
+  background-color: white;
+}
+
+.right iframe {
+  width: 100%;
+}
+.right .label-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 14%;
+  background-color: rgb(39, 38, 38);
+  color: white;
+}
+
+.right .label-bar .output-bar,
+.console-bar {
+  flex-basis: 20%;
+  height: 100%;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid rgb(24, 23, 23);
+  transition: 0.5s;
+}
+
+.right .label-bar .collapse {
+  margin-left: auto;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.right .label-bar .output-bar:hover,
+.console-bar:hover {
+  cursor: pointer;
+  background-color: rgb(24, 23, 23);
+  border: 1px solid rgb(39, 38, 38);
+}
+
+.right .label-bar .output-bar {
+  background-color: rgb(24, 23, 23);
+  position: relative;
+}
+
+.right .label-bar .output-bar::before {
+  content: " ";
+  width: 100%;
+  height: 2px;
+  background-color: rgb(230, 32, 81);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.area {
+  height: 100%;
+  display: flex;
+}
+.right #console {
+  width: 0%;
+  overflow-y: scroll;
+  padding-left: 10px;
+}
+
+/* Adding the class to the right to handle the click events */
+.console-clicked iframe {
+  width: 0%;
+}
+.console-clicked #console {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+}
+
+.console-clicked .label-bar .output-bar {
+  background-color: rgb(39, 38, 38);
+  position: relative;
+}
+
+.console-clicked .label-bar .output-bar::before {
+  content: " ";
+  width: 0%;
+  height: 0px;
+}
+
+.console-clicked .label-bar .console-bar {
+  background-color: rgb(24, 23, 23);
+  position: relative;
+}
+
+.console-clicked .label-bar .console-bar::before {
+  content: " ";
+  width: 100%;
+  height: 2px;
+  background-color: rgb(230, 32, 81);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
